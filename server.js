@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3000;
 const Album = require('./ models/album');
-
 dotenv.config();
 
 mongoose.connect(process.env.CONNECTION_URL, {
@@ -79,7 +78,7 @@ app.delete('/api/albums/:id', async (req, res) => {
 });
 
 // Retrieve a specific album by title
-app.get('/api/albums/by-title/:title', async (req, res) => {
+app.get('', async (req, res) => {
   const title = req.params.title;
   const albums = await Album.find({ title: title });
 
