@@ -88,7 +88,7 @@ app.get('/', (req, res) => {
 });
 
 // Retrieve a specific album by title
-/*app.get('', async (req, res) => {
+app.get('api/albums/title/:title', async (req, res) => {
   const title = req.params.title;
   const albums = await Album.find({ title: title });
 
@@ -97,7 +97,7 @@ app.get('/', (req, res) => {
   } else {
     res.json(albums);
   }
-});*/
+});
 
 
 
