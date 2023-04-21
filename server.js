@@ -18,9 +18,15 @@ app.use(express.json()); // This line is necessary to parse JSON request bodies
 
 // a. Show all albums
 app.get('/api/albums', async (req, res) => {
-  const albums = await Album.find({});
-  res.json(albums);
+  try {
+    const albums = await Album.find({});
+    res.json(albums);
+  } catch (error) {
+    console.error('Error fetching albums:', error);
+    res.status(500).send('Error fetching albums');
+  }
 });
+
 
 // Retrieve a specific album by ID
 app.get('/api/albums/:id', async (req, res) => {
