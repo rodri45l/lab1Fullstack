@@ -83,12 +83,12 @@ app.delete('/api/albums/:id', async (req, res) => {
   }
 });
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Retrieve a specific album by title
-app.get('', async (req, res) => {
+/*app.get('', async (req, res) => {
   const title = req.params.title;
   const albums = await Album.find({ title: title });
 
@@ -97,7 +97,7 @@ app.get('', async (req, res) => {
   } else {
     res.json(albums);
   }
-});
+});*/
 
 
 
